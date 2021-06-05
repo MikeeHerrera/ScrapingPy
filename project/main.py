@@ -1,13 +1,16 @@
 import requests
 import re
+
 url = 'http://econpy.pythonanywhere.com/ex/001.html'
 
-if __name__ == '__main__': 
-    
-    response = requests.get(url)
+if __name__ == '__main__':
 
-    if response.status_code == 200:
-        content = response.text #str
+    with open ('econpy.html','r') as file:
+        content = file.read()
+    # response = requests.get(url)
+
+    # if response.status_code == 200:
+    #     content = response.text #str
         # print(content)
 
         # modulo 1 imprimiendo datos de bayer manera 1
@@ -22,9 +25,9 @@ if __name__ == '__main__':
             end = line.find(regexb)
             title = line[start:end]
 
-            print(title)
-    with open('econpy.html','w+') as file:
-        file.write(content)
+    #         print(title)
+    # with open('econpy.html','w+') as file:
+    #     file.write(content)
 
 
     # manera 2//
